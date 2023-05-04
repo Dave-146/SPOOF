@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv='cache-control' content='no-cache'> 
+  <meta http-equiv='expires' content='0'> 
+  <meta http-equiv='pragma' content='no-cache'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Select your role</title>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9281a1cc83.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+  
+</head>
+
+<style>
+  .modal-content {
+    background: #fbf9ed;
+    border: none;
+  }
+
+  .modal-body {
+    border-bottom: none;
+  }
+
+  .modal-header {
+    font-size: 0.75em;
+    text-align: left;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .close {
+    color: #451F27;
+    opacity: 1;
+    padding-left: 5px;
+  }
+
+</style>
+
+<body id="blue">
+  <div class="container">
+    <nav>
+      <button onclick="window.location.href='landing.html';" class="nav-back" id="btn_nav_red" alt="Go Back">
+        <i class="fa-solid fa-chevron-left fa-l" style="color: #fbf9ed;"></i>
+      </button>
+    </nav>
+    <header>
+      <div class="row">
+        <h1>Let's play!</h1>
+      </div>
+    </header>
+    <main>
+      <div class="row">
+        <h3>Who are you?</h3>
+      </div>
+      <div class="row" id="role-row">
+        <div class="col-8">
+          <button id="btn_role" onclick="window.location.href='actor.html';">Actor</a></button>
+        </div>
+        <div class="col-2">
+          <button class="help" alt="Actor Instructions" data-toggle="modal" data-target="#actorModal">
+            <i class="fa-solid fa-question fa-l" style="color: #ED7657;"></i>
+          </button>
+        </div>
+
+        
+      </div>
+      <div class="row" id="role-row">
+        <div class="col-8">
+          <button id="btn_role" onclick="window.location.href = 'guesser_waiting.html';">Guesser</a></button>
+        </div>
+        <div class="col-2">
+          <button class="help" alt="Guesser Instructions" data-toggle="modal" data-target="#guesserModal">
+            <i class="fa-solid fa-question fa-l" style="color: #ED7657;"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+        <div class="rectangle-red">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+    </footer>
+
+
+    <div class="modal fade" id="actorModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title">Actor Instructions</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <b>1.</b> Go behind one-way mirror wall.<br>
+            <b>2.</b> Spin wheel to get your prompt.<br>
+            <b>3.</b> Act out prompt without talking.<br><br>
+            <b>How to win?</b><br>Receive correct guess within 3 minutes!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="guesserModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+  
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title">Actor Instructions</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <b>1.</b> Watch actor through one-way mirror wall.<br>
+            <b>2.</b> Try to figure out what is being acted out.<br>
+            <b>3.</b> Enter as many guesses as you can think of.<br><br>
+            <b>How to win?</b><br>Guess correctly within 3 minutes!
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+    
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<script>
+  /* --------------- No Scroll (Malorie) --------------------- */
+
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function disable_scroll_mobile() {
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+  }
+
+  disable_scroll_mobile();
+</script>
+</body>
+</html>
